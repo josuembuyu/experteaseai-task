@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +11,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ul className="flex justify-center py-6 gap-4">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li>
+            <a href="/bots">Bots</a>
+          </li>
+          <li>
+            <a href="/whatsapp-integration">Whatsapp integration </a>
+          </li>
+        </ul>
+        {children}
+      </body>
     </html>
   );
 }
